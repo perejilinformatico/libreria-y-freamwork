@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framework CSS - Ejemplo</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .example-section {
+            margin-bottom: var(--spacing-3xl);
+            padding-bottom: var(--spacing-2xl);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .example-section:last-child {
+            border-bottom: none;
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .color-box {
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: white;
+            text-align: center;
+        }
+
+        .demo-form {
+            max-width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-brand">Framework</div>
+        <ul class="navbar-menu">
+            <li><a href="#buttons">Botones</a></li>
+            <li><a href="#forms">Formularios</a></li>
+            <li><a href="#cards">Cards</a></li>
+            <li><a href="#colors">Colores</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="container container-xl" style="padding-top: var(--spacing-3xl);">
+
+        <!-- HERO SECTION -->
+        <div style="text-align: center; margin-bottom: var(--spacing-3xl);">
+            <h1>Framework CSS Moderno</h1>
+            <p style="font-size: var(--font-size-lg); color: var(--text-secondary); margin-bottom: var(--spacing-xl);">
+                Un framework CSS completo con componentes, utilidades y sistema de diseño integrado.
+            </p>
+            <div class="flex justify-center gap-md">
+                <button class="btn btn-primary btn-lg">Comenzar</button>
+                <button class="btn btn-outline btn-lg">Documentación</button>
+            </div>
+        </div>
+
+        <!-- ALERTAS -->
+        <div style="margin-bottom: var(--spacing-3xl);">
+            <h2>Alertas</h2>
+            <div class="alert alert-primary">
+                <span>ℹ️</span>
+                <div>
+                    <strong>Información:</strong> Este es un mensaje informativo para el usuario.
+                </div>
+            </div>
+            <div class="alert alert-success">
+                <span>✓</span>
+                <div>
+                    <strong>Éxito:</strong> La operación se completó correctamente.
+                </div>
+            </div>
+            <div class="alert alert-warning">
+                <span>⚠</span>
+                <div>
+                    <strong>Advertencia:</strong> Asegúrate de revisar esta información.
+                </div>
+            </div>
+            <div class="alert alert-danger">
+                <span>✕</span>
+                <div>
+                    <strong>Error:</strong> Algo salió mal. Por favor, intenta de nuevo.
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTONES -->
+        <div class="example-section" id="buttons">
+            <h2>Botones</h2>
+
+            <h3 style="margin-top: var(--spacing-2xl);">Estilos</h3>
+            <div class="flex flex-wrap gap-md" style="margin-top: var(--spacing-lg);">
+                <button class="btn btn-primary">Primario</button>
+                <button class="btn btn-secondary">Secundario</button>
+                <button class="btn btn-success">Éxito</button>
+                <button class="btn btn-danger">Peligro</button>
+                <button class="btn btn-outline">Outline</button>
+                <button class="btn btn-ghost">Ghost</button>
+            </div>
+
+            <h3 style="margin-top: var(--spacing-2xl);">Tamaños</h3>
+            <div class="flex flex-wrap gap-md" style="margin-top: var(--spacing-lg);">
+                <button class="btn btn-primary btn-sm">Pequeño</button>
+                <button class="btn btn-primary">Medio</button>
+                <button class="btn btn-primary btn-lg">Grande</button>
+            </div>
+
+            <h3 style="margin-top: var(--spacing-2xl);">Botón a ancho completo</h3>
+            <button class="btn btn-primary btn-block" style="margin-top: var(--spacing-lg);">Ancho Completo</button>
+        </div>
+
+        <!-- FORMULARIOS -->
+        <div class="example-section" id="forms">
+            <h2>Formularios</h2>
+            <form class="demo-form" style="margin-top: var(--spacing-lg);">
+                <div class="form-group">
+                    <label for="name">Nombre Completo</label>
+                    <input type="text" id="name" placeholder="Juan Pérez">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" placeholder="juan@ejemplo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="country">País</label>
+                    <select id="country">
+                        <option>Selecciona un país</option>
+                        <option>Argentina</option>
+                        <option>México</option>
+                        <option>España</option>
+                        <option>Colombia</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" placeholder="Escribe tu mensaje aquí..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="agree">
+                        <input type="checkbox" id="agree"> Acepto los términos y condiciones
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+            </form>
+        </div>
+
+        <!-- CARDS -->
+        <div class="example-section" id="cards">
+            <h2>Cards</h2>
+            <div class="grid grid-cols-3" style="margin-top: var(--spacing-lg);">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Card 1</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Este es el contenido de la tarjeta. Puedes agregar cualquier elemento HTML dentro.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary btn-sm">Acción</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Card 2</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Las cards son muy versátiles y pueden contener cualquier tipo de contenido.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-secondary btn-sm">Más Info</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Card 3</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Usa las utilidades de espaciado y texto para personalizar cada card según tus necesidades.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-success btn-sm">Confirmar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- BADGES -->
+        <div class="example-section">
+            <h2>Badges</h2>
+            <div class="flex flex-wrap gap-md" style="margin-top: var(--spacing-lg);">
+                <span class="badge badge-primary">Primario</span>
+                <span class="badge badge-secondary">Secundario</span>
+                <span class="badge badge-success">Éxito</span>
+                <span class="badge badge-danger">Peligro</span>
+                <span class="badge badge-warning">Advertencia</span>
+                <span class="badge badge-info">Información</span>
+                <span class="badge badge-outline badge-primary">Outline</span>
+            </div>
+        </div>
+
+        <!-- COLORES -->
+        <div class="example-section" id="colors">
+            <h2>Paleta de Colores</h2>
+
+            <h3 style="margin-top: var(--spacing-2xl);">Colores Principales</h3>
+            <div class="example-grid" style="margin-top: var(--spacing-lg);">
+                <div class="color-box bg-primary">Primario</div>
+                <div class="color-box bg-secondary">Secundario</div>
+                <div class="color-box bg-success">Éxito</div>
+                <div class="color-box bg-danger">Peligro</div>
+                <div class="color-box bg-warning" style="color: #333;">Advertencia</div>
+                <div class="color-box bg-info">Información</div>
+            </div>
+
+            <h3 style="margin-top: var(--spacing-2xl);">Grises</h3>
+            <div class="flex flex-wrap gap-md" style="margin-top: var(--spacing-lg);">
+                <div
+                    style="padding: var(--spacing-md); background-color: var(--gray-50); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); flex: 1; min-width: 150px;">
+                    <p style="margin: 0; font-weight: 600; color: var(--text-primary);">Gray 50</p>
+                </div>
+                <div
+                    style="padding: var(--spacing-md); background-color: var(--gray-200); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); flex: 1; min-width: 150px;">
+                    <p style="margin: 0; font-weight: 600; color: var(--text-primary);">Gray 200</p>
+                </div>
+                <div
+                    style="padding: var(--spacing-md); background-color: var(--gray-500); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); flex: 1; min-width: 150px;">
+                    <p style="margin: 0; font-weight: 600; color: white;">Gray 500</p>
+                </div>
+                <div
+                    style="padding: var(--spacing-md); background-color: var(--gray-900); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); flex: 1; min-width: 150px;">
+                    <p style="margin: 0; font-weight: 600; color: white;">Gray 900</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TIPOGRAFÍA -->
+        <div class="example-section">
+            <h2>Tipografía</h2>
+
+            <h3 style="margin-top: var(--spacing-2xl);">Tamaños de Fuente</h3>
+            <div style="margin-top: var(--spacing-lg);">
+                <p class="text-xs">Texto XS - 0.75rem</p>
+                <p class="text-sm">Texto SM - 0.875rem</p>
+                <p class="text-base">Texto Base - 1rem</p>
+                <p class="text-lg">Texto LG - 1.125rem</p>
+                <p class="text-xl">Texto XL - 1.25rem</p>
+                <p class="text-2xl">Texto 2XL - 1.5rem</p>
+            </div>
+
+            <h3 style="margin-top: var(--spacing-2xl);">Pesos de Fuente</h3>
+            <div style="margin-top: var(--spacing-lg);">
+                <p class="font-light">Texto Light - weight 300</p>
+                <p class="font-normal">Texto Normal - weight 400</p>
+                <p class="font-medium">Texto Medium - weight 500</p>
+                <p class="font-semibold">Texto Semibold - weight 600</p>
+                <p class="font-bold">Texto Bold - weight 700</p>
+            </div>
+        </div>
+
+        <!-- GRID SYSTEM -->
+        <div class="example-section">
+            <h2>Sistema de Grid</h2>
+
+            <h3 style="margin-top: var(--spacing-2xl);">Grid de 3 columnas</h3>
+            <div class="grid grid-cols-3" style="margin-top: var(--spacing-lg);">
+                <div
+                    style="padding: var(--spacing-lg); background-color: var(--bg-tertiary); border-radius: var(--border-radius-lg); text-align: center;">
+                    <p style="margin: 0; font-weight: 600;">Columna 1</p>
+                </div>
+                <div
+                    style="padding: var(--spacing-lg); background-color: var(--bg-tertiary); border-radius: var(--border-radius-lg); text-align: center;">
+                    <p style="margin: 0; font-weight: 600;">Columna 2</p>
+                </div>
+                <div
+                    style="padding: var(--spacing-lg); background-color: var(--bg-tertiary); border-radius: var(--border-radius-lg); text-align: center;">
+                    <p style="margin: 0; font-weight: 600;">Columna 3</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: var(--spacing-2xl);">Grid responsivo (2 columnas en mobile)</h3>
+            <div class="grid grid-cols-2" style="margin-top: var(--spacing-lg);">
+                <div
+                    style="padding: var(--spacing-lg); background-color: var(--bg-tertiary); border-radius: var(--border-radius-lg); text-align: center;">
+                    <p style="margin: 0; font-weight: 600;">Item 1</p>
+                </div>
+                <div
+                    style="padding: var(--spacing-lg); background-color: var(--bg-tertiary); border-radius: var(--border-radius-lg); text-align: center;">
+                    <p style="margin: 0; font-weight: 600;">Item 2</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TABLAS -->
+        <div class="example-section">
+            <h2>Tablas</h2>
+            <table style="margin-top: var(--spacing-lg);">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Juan Pérez</td>
+                        <td>juan@ejemplo.com</td>
+                        <td><span class="badge badge-success">Activo</span></td>
+                        <td><button class="btn btn-sm btn-ghost">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>María García</td>
+                        <td>maria@ejemplo.com</td>
+                        <td><span class="badge badge-success">Activo</span></td>
+                        <td><button class="btn btn-sm btn-ghost">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>Carlos López</td>
+                        <td>carlos@ejemplo.com</td>
+                        <td><span class="badge badge-danger">Inactivo</span></td>
+                        <td><button class="btn btn-sm btn-ghost">Editar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div
+        style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); margin-top: var(--spacing-3xl); padding: var(--spacing-2xl) var(--spacing-lg); text-align: center;">
+        <p style="color: var(--text-secondary); margin: 0;">
+            © 2024 Framework CSS. Todos los derechos reservados.
+        </p>
+    </div>
+
+</body>
+
+</html>
